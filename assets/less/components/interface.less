@@ -1,0 +1,162 @@
+//forms, buttons, dialogs etc.
+
+
+//MENU
+.horizontal-nav{
+		&:extend(.ul-unstyled);
+
+		li{
+			display: inline-block;
+			margin-left: 15px;
+
+			a{
+				.transition();
+				display: block;
+				padding: 10px 17px;
+				border:2px solid transparent;
+				color:#fff;
+				font-weight: 600;
+				line-height: 1;
+				text-transform: uppercase;
+				text-decoration: none;
+				cursor: pointer;
+
+				&.active{
+				border-color: @accent;
+				color: @accent;
+			  }
+			  &:hover{color: @accent;}
+			}		
+		}
+
+		&.black-font a{
+			color: @font;
+		}
+	}//ul
+
+
+
+
+  // RESPONISVE MENU
+
+.main-menu-trigger{
+	float: right;
+	font-size: 45px;
+	line-height: 1;
+	color: #fff;
+	display: none;
+	cursor: pointer;
+	.transition();
+	&:hover{
+		color: @accent;
+	}
+}
+
+@media(max-width:992px){
+
+	.main-logo{
+		float: left;
+	}
+
+	.main-menu-trigger{
+		display: block;
+	}
+
+	.site-nav{
+		position: relative;
+
+		 .horizontal-nav{
+		 	display: none;
+			position: absolute;
+			top:100%;
+			left:0;
+			right:0;
+
+			li{
+				display: block;
+				margin-left:0;
+				text-align: center;
+				background-color: @overlay;
+				border-bottom: 1px solid lighten(@overlay,10%);
+			}
+
+			a{
+				display: inline-block;
+				padding:20px 25px;
+
+				&.active{
+					border-color: transparent;
+				}
+			}
+		}
+	}
+}
+
+
+	//VIDEO
+
+	//iframe responsive
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.btn-grey{
+	.btn-ghost();
+	padding: 15px 37px;
+	@media (max-width:992px){
+    margin-bottom:50px;
+	}
+}
+
+
+//FORM
+
+.frm-group{
+	margin-bottom: 35px;
+}
+
+label{
+	display: block;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.frm-control{
+	padding: 0 15px;
+	height: 60px;
+	width: 100%;
+	background-color: transparent;
+	border: 2px solid #fff;
+}
+
+textarea.frm-control{
+	height: 215px;
+}
+
+.btn-submit{
+	padding: 20px 0;
+	width: 100%;
+	background-color: @accent;
+	font-weight: 600;
+	line-height: 1;
+	text-transform: uppercase;
+	border: 2px solid @accent;
+	outline: none;
+	.transition();
+
+	&:hover{
+		background-color: transparent;
+		color: @accent;
+	}
+}
